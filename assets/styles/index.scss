@@ -1,1 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
+
+
+body{
+  padding: 60px;
+}
+
+h1{
+  margin: auto;
+  margin-bottom: 48px;
+}
+
+form{
+  margin:auto;
+  max-width: 20vw;
+  min-width: 400px;
+}
+
+#sign-up, #sign-in{
+  max-width: 20vw;
+  min-width: 400px;
+  margin-top: 2rem;
+}
