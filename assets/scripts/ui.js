@@ -6,6 +6,12 @@ const onSignUpSuccess = function () {
   $('.toast-body').text('Youre all signed up!')
 }
 
+const onSignInSuccess = function () {
+  $('#sign-in-form').trigger('reset')
+  $('.toast').toast('show')
+  $('.toast-body').text('Welcome!')
+}
+
 const onError = function () {
   $('.toast').toast('show')
   $('.toast-body').text('Error!')
@@ -16,5 +22,6 @@ const onError = function () {
 
 module.exports = {
   onSignUpSuccess,
+  onSignInSuccess,
   onError
 }

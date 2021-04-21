@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: '<insert heokuUrl>', // later change with my HerokuUrl
+  production: 'https://tic-tac-toe-api-production.herokuapp.com', // later change with my HerokuUrl
   development: 'http://localhost:4741' //change with http://localhost:4741
 }
 
