@@ -13,6 +13,7 @@ const onSignInSuccess = function (response) {
   $('#sign-in-form').trigger('reset')
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
+  $('#signed-in-options').show()
   $('.toast').toast('show')
   $('.toast-body').text('Welcome!')
 }
@@ -20,6 +21,7 @@ const onSignInSuccess = function (response) {
 const onSignOutSuccess = function () {
   $('#sign-in-form').show()
   $('#sign-up-form').show()
+  $('#signed-in-options').hide()
   $('.toast').toast('show')
   $('.toast-body').text('Goodbye!')
   store.user = null
