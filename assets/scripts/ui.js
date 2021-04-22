@@ -1,4 +1,5 @@
 'use strict'
+const store = require('./store')
 
 const onSignUpSuccess = function () {
   $('#sign-up-form').trigger('reset')
@@ -6,10 +7,22 @@ const onSignUpSuccess = function () {
   $('.toast-body').text('Youre all signed up!')
 }
 
-const onSignInSuccess = function () {
+const onSignInSuccess = function (response) {
+  console.log(response)
+  store.user = response.user
   $('#sign-in-form').trigger('reset')
+  $('#sign-in-form').hide()
+  $('#sign-up-form').hide()
   $('.toast').toast('show')
   $('.toast-body').text('Welcome!')
+}
+
+const onSignOutSuccess = function () {
+  $('#sign-in-form').show()
+  $('#sign-up-form').show()
+  $('.toast').toast('show')
+  $('.toast-body').text('Goodbye!')
+  store.user = null
 }
 
 const onError = function () {
@@ -23,5 +36,6 @@ const onError = function () {
 module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
+  onSignOutSuccess,
   onError
 }
