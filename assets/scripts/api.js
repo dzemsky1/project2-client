@@ -72,6 +72,16 @@ const updateAnimal = function (data) {
   })
 }
 
+const destroyAnimal = function (data) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/animals/' + data['ID'],
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -79,5 +89,6 @@ module.exports = {
   changePassword,
   createAnimal,
   updateAnimal,
-  viewAnimals
+  viewAnimals,
+  destroyAnimal
 }

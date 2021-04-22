@@ -44,7 +44,7 @@ const onCreateSuccess = function () {
 }
 
 const onViewSuccess = function (response) {
-  console.log(response)
+  // console.log(response)
   $('#create-form').trigger('reset')
   $('#animal-list').html('Animals')
   for (let i = 0; i < response.animals.length; i++) {
@@ -58,9 +58,15 @@ const onViewSuccess = function (response) {
 }
 
 const onUpdateSuccess = function (response) {
-  console.log(response)
+  // console.log(response)
   $('.toast').toast('show')
   $('.toast-body').text('Updated!')
+}
+
+const onDestroySuccess = function (response) {
+  $('#destroy-form').trigger('reset')
+  $('.toast').toast('show')
+  $('.toast-body').text('Its a sad day on the farm')
 }
 
 
@@ -68,6 +74,8 @@ const onError = function () {
   $('.toast').toast('show')
   $('.toast-body').text('Error!')
 }
+
+
 
 
 
@@ -80,5 +88,6 @@ module.exports = {
   onCreateSuccess,
   onViewSuccess,
   onUpdateSuccess,
+  onDestroySuccess,
   onError
 }

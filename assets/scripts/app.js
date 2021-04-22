@@ -17,5 +17,6 @@ $(() => {
   $('#create-form').on('submit', authEvents.onCreate)
   $('#view-button').on('click', authEvents.onView)
   $('#update-form').on('submit', authEvents.onUpdate)
+  $('#destroy-form').on('submit', authEvents.onDestroy)
   // your JS code goes here
 })

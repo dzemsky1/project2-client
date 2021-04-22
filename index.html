@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Welcome to the Zoo</h1>
+      <h1>Welcome to the Farm</h1>
 
       <div id='signed-in-options'>
         <button id="sign-out-button" type="button" class="btn btn-primary">Sign Out</button>
@@ -90,6 +90,14 @@
             <input type="text" name="ID" class="form-control" placeholder="Enter Id">
           </div>
           <button id="update-button" type="submit" class="btn btn-secondary">Update Animal</button>
+        </form>
+
+        <form id="destroy-form">
+          <div class="form-group">
+            <label>ID</label>
+            <input type="text" id="deleteid" name="ID" class="form-control" placeholder="Enter Id">
+          </div>
+          <button id="destroy-button" type="submit" class="btn btn-danger">: (  Destroy Animal</button>
         </form>
 
         <p id="animal-list"></p>

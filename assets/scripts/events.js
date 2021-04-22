@@ -70,6 +70,16 @@ const onUpdate = function (event) {
     .catch(ui.error)
 }
 
+const onDestroy = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log(data)
+  api.destroyAnimal(data)
+    .then(ui.onDestroySuccess)
+    .catch(ui.error)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -77,5 +87,6 @@ module.exports = {
   onChangePassword,
   onView,
   onCreate,
-  onUpdate
+  onUpdate,
+  onDestroy
 }
