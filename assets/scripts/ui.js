@@ -8,9 +8,8 @@ const onSignUpSuccess = function () {
 }
 
 const onSignInSuccess = function (response) {
-  console.log('this is response ', response)
   store.user = response.user
-  console.log('this is store.user ', store.user)
+  $('#animal-options').show()
   $('#sign-in-form').trigger('reset')
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
@@ -23,6 +22,7 @@ const onSignOutSuccess = function () {
   $('#sign-in-form').show()
   $('#sign-up-form').show()
   $('#signed-in-options').hide()
+  $('#animal-options').hide()
   $('.toast').toast('show')
   $('.toast-body').text('Goodbye!')
   console.log(store.user)
@@ -35,6 +35,22 @@ const onChangePasswordSuccess = function () {
   $('.toast').toast('show')
   $('.toast-body').text('Good Choice!')
 }
+
+const onCreateSuccess = function () {
+  $('#create-form').trigger('reset')
+  console.log('animal created?')
+  $('.toast').toast('show')
+  $('.toast-body').text('Roaaaarrrrrrrr!')
+}
+
+const onViewSuccess = function (response) {
+  console.log(response)
+  $('#create-form').trigger('reset')
+  console.log('animal viwed?')
+  $('.toast').toast('show')
+  $('.toast-body').text('Here they are!')
+}
+
 
 const onError = function () {
   $('.toast').toast('show')
@@ -49,5 +65,7 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onChangePasswordSuccess,
+  onCreateSuccess,
+  onViewSuccess,
   onError
 }

@@ -42,9 +42,28 @@ const onChangePassword = function (event) {
     .catch(ui.error)
 }
 
+const onCreate = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log(data)
+  api.createAnimal(data)
+    .then(ui.onCreateSuccess)
+    .catch(ui.error)
+}
+
+const onView = function () {
+  event.preventDefault()
+  api.viewAnimals()
+    .then(ui.onViewSuccess)
+    .catch(ui.error)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onView,
+  onCreate
 }

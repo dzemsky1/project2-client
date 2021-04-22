@@ -61,6 +61,23 @@
         <button id="sign-in" type="submit" class="btn btn-primary">Sign In</button>
       </form>
 
+      <section id='animal-options'>
+        <form id="create-form">
+          <div class="form-group">
+            <label> Animal Name </label>
+            <input type="text" name="animal[name]"  class="form-control" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <label>Skill</label>
+            <input type="text" name="animal[skill]" class="form-control" placeholder="Enter Skill">
+          </div>
+          <button id="create-button" type="submit" class="btn btn-primary">Create Animal</button>
+        </form>
+
+        <button id="view-button" type="button" class="btn btn-secondary">Enter the Jungle</button>
+        <p id="view-list"></p>
+      </section>
+
 
       <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
           <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">

@@ -1,4 +1,7 @@
-curl "https://library-express-api.herokuapp.com/sign-in" \
+API="http://localhost:4741"
+URL_PATH="/sign-in"
+
+curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
@@ -8,3 +11,5 @@ curl "https://library-express-api.herokuapp.com/sign-in" \
       "password": "'"${PASSWORD}"'"
     }
   }'
+
+echo

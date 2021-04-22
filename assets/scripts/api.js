@@ -40,9 +40,32 @@ const changePassword = function (data) {
   })
 }
 
+const createAnimal = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/animals',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
+const viewAnimals = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/animals',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  createAnimal,
+  viewAnimals
 }
