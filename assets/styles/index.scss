@@ -1,6 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 $clear: rgba(255,255,255,0.3);
 $text: rgba(255,255,255,0.8);
+$primary: linear-gradient(45deg, #fc6076, #ff9a44, #ef9d43, #e75516);
 
 
 body{
@@ -16,13 +17,11 @@ h1{
   font-weight: 600px;
 }
 
-::placeholder {
-            color: $text;
-}
 
-
-.modal-dialog{
-  background-color: black;
+#old-password-group, #new-password-group{
+  &::placeholder{
+    color: black;
+  }
 }
 
 .form-control{
@@ -61,6 +60,9 @@ p {
     margin-bottom: 60px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
+.modal-title{
+  color: black;
+}
 
 #sign-up-form, #sign-in-form, #create-form, #update-form, #destroy-form{
   margin:auto;
@@ -72,7 +74,7 @@ p {
   box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
   background-color: $clear;
   border-radius: 30px;
-  backdrop-filter: blur(10px);
+  margin-bottom: 24px;
 }
 
 #sign-up, #sign-in{
@@ -84,4 +86,26 @@ p {
   box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
   border: none;
   border-radius: 32px;
+}
+
+#animal-list{
+  color: black;
+}
+
+.btn-primary{
+  background-image: $primary;
+  background-size: 200% 100%;
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  border: none;
+  border-radius: 32px;
+}
+
+.btn-secondary{
+  background-color: $clear;
+  background-size: 200% 100%;
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  border: none;
+  border-radius: 32px;
+  border-left: 1px solid $clear;
+  border-top: 1px solid $clear;
 }

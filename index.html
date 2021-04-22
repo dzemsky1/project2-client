@@ -14,11 +14,11 @@
     <body>
 
       <div id='signed-in-options'>
-        <button id="sign-out-button" type="button" class="btn btn-primary">Sign Out</button>
+        <button id="sign-out-button" type="button" class="btn btn-secondary">Sign Out</button>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#password-modal">
-        Launch demo modal
-      </button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#password-modal">
+        Change Password
+        </button>
 
       <!-- Modal -->
       <div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -32,13 +32,11 @@
             </div>
             <div class="modal-body">
               <form id="change-password-form">
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Old Password</label>
-                  <input type="password" name="passwords[old]" class="form-control" placeholder="Password">
+                <div class="form-group" id="old-password-group">
+                  <input type="password" name="passwords[old]" placeholder="Old Password">
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">New Password</label>
-                  <input type="password" name="passwords[new]" class="form-control" placeholder="Password">
+                <div class="form-group" id="new-password-group">
+                  <input type="password" name="passwords[new]"  placeholder="New Password">
                 </div>
                 <button id="change-password-button" type="submit" class="btn btn-secondary">Change Password</button>
               </form>
@@ -53,8 +51,8 @@
       </div>
 
 
-
-
+  <div class="row">
+  <div class="span5">
       <form id="sign-up-form">
         <div class="form-group">
           <h1>Welcome to the Farm</h1>
@@ -68,8 +66,11 @@
         </div>
         <button id="sign-up" type="submit" class="btn btn-secondary">Sign Up</button>
       </form>
+  </div>
       <hr class="dashed">
+  <div class="span5">
       <form id="sign-in-form">
+        <div class="span4">
         <h1>Come on in</h1>
         <div class="form-group">
           <input type="email" name="credentials[email]"  class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
@@ -78,48 +79,74 @@
           <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
         </div>
         <button id="sign-in" type="submit" class="btn btn-primary">Sign In</button>
+        </div>
       </form>
+    </div>
+  </div>
+
+
 
       <section id='animal-options'>
+
+        <!-- <button id="view-button" type="button" class="btn btn-primary">View the Farm</button> -->
+        <button id="view-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#farm-modal">
+        View the Farm
+        </button>
+
+      <div class="modal fade" id="farm-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Farm Animals</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="animal-list"></p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
         <form id="create-form">
+          <h1>Create an Animal</h1>
           <div class="form-group">
-            <label> Animal Name </label>
             <input type="text" name="animal[name]"  class="form-control" placeholder="Enter Name">
           </div>
           <div class="form-group">
-            <label>Skill</label>
             <input type="text" name="animal[skill]" class="form-control" placeholder="Enter Skill">
           </div>
-          <button id="create-button" type="submit" class="btn btn-primary">Create Animal</button>
+          <button id="create-button" type="submit" class="btn btn-primary">Create</button>
         </form>
 
-        <button id="view-button" type="button" class="btn btn-secondary">View the Farm</button>
-
         <form id="update-form">
+          <h1>Update an Animal</h1>
           <div class="form-group">
-            <label> Animal Name </label>
             <input type="text" name="animal[name]"  class="form-control" placeholder="Enter Name">
           </div>
           <div class="form-group">
-            <label>Skill</label>
             <input type="text" name="animal[skill]" class="form-control" placeholder="Enter Skill">
           </div>
           <div class="form-group">
-            <label>ID</label>
             <input type="text" name="ID" class="form-control" placeholder="Enter Id">
           </div>
-          <button id="update-button" type="submit" class="btn btn-secondary">Update Animal</button>
+          <button id="update-button" type="submit" class="btn btn-primary">Update</button>
         </form>
 
         <form id="destroy-form">
+          <h1>Put an Animal to Bed</h1>
           <div class="form-group">
-            <label>ID</label>
             <input type="text" id="deleteid" name="ID" class="form-control" placeholder="Enter Id">
           </div>
-          <button id="destroy-button" type="submit" class="btn btn-danger">: (  Destroy Animal</button>
+          <button id="destroy-button" type="submit" class="btn btn-danger"> Time for sleep </button>
         </form>
 
-        <p id="animal-list"></p>
       </section>
 
 
