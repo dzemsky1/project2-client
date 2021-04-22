@@ -8,8 +8,9 @@ const onSignUpSuccess = function () {
 }
 
 const onSignInSuccess = function (response) {
-  console.log(response)
+  console.log('this is response ', response)
   store.user = response.user
+  console.log('this is store.user ', store.user)
   $('#sign-in-form').trigger('reset')
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
@@ -24,7 +25,15 @@ const onSignOutSuccess = function () {
   $('#signed-in-options').hide()
   $('.toast').toast('show')
   $('.toast-body').text('Goodbye!')
-  store.user = null
+  console.log(store.user)
+  // store.user = null
+}
+
+const onChangePasswordSuccess = function () {
+  $('#sign-in-form').trigger('reset')
+  console.log('pw should change')
+  $('.toast').toast('show')
+  $('.toast-body').text('Good Choice!')
 }
 
 const onError = function () {
@@ -39,5 +48,6 @@ module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
   onSignOutSuccess,
+  onChangePasswordSuccess,
   onError
 }
