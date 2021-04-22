@@ -74,8 +74,25 @@
           <button id="create-button" type="submit" class="btn btn-primary">Create Animal</button>
         </form>
 
-        <button id="view-button" type="button" class="btn btn-secondary">Enter the Jungle</button>
-        <p id="view-list"></p>
+        <button id="view-button" type="button" class="btn btn-secondary">View the Farm</button>
+
+        <form id="update-form">
+          <div class="form-group">
+            <label> Animal Name </label>
+            <input type="text" name="animal[name]"  class="form-control" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <label>Skill</label>
+            <input type="text" name="animal[skill]" class="form-control" placeholder="Enter Skill">
+          </div>
+          <div class="form-group">
+            <label>ID</label>
+            <input type="text" name="ID" class="form-control" placeholder="Enter Id">
+          </div>
+          <button id="update-button" type="submit" class="btn btn-secondary">Update Animal</button>
+        </form>
+
+        <p id="animal-list"></p>
       </section>
 
 

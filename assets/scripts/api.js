@@ -61,11 +61,23 @@ const viewAnimals = function () {
   })
 }
 
+const updateAnimal = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/animals/' + data['ID'],
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   createAnimal,
+  updateAnimal,
   viewAnimals
 }

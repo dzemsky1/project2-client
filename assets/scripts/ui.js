@@ -46,9 +46,21 @@ const onCreateSuccess = function () {
 const onViewSuccess = function (response) {
   console.log(response)
   $('#create-form').trigger('reset')
-  console.log('animal viwed?')
+  $('#animal-list').html('Animals')
+  for (let i = 0; i < response.animals.length; i++) {
+    const name = response.animals[i].name
+    const skill = response.animals[i].skill
+    const id = response.animals[i]._id
+    $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id)
+  }
   $('.toast').toast('show')
   $('.toast-body').text('Here they are!')
+}
+
+const onUpdateSuccess = function (response) {
+  console.log(response)
+  $('.toast').toast('show')
+  $('.toast-body').text('Updated!')
 }
 
 
@@ -67,5 +79,6 @@ module.exports = {
   onChangePasswordSuccess,
   onCreateSuccess,
   onViewSuccess,
+  onUpdateSuccess,
   onError
 }

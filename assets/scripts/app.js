@@ -16,5 +16,6 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#create-form').on('submit', authEvents.onCreate)
   $('#view-button').on('click', authEvents.onView)
+  $('#update-form').on('submit', authEvents.onUpdate)
   // your JS code goes here
 })

@@ -59,11 +59,23 @@ const onView = function () {
     .catch(ui.error)
 }
 
+const onUpdate = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log(data)
+  console.log(data['ID'])
+  api.updateAnimal(data)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.error)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
   onView,
-  onCreate
+  onCreate,
+  onUpdate
 }
