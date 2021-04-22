@@ -70,7 +70,7 @@ const onDestroySuccess = function (response) {
 }
 
 
-const onError = function () {
+const error = function () {
   $('.toast').toast('show')
   $('.toast-body').text('Error!')
 }
@@ -89,5 +89,5 @@ module.exports = {
   onViewSuccess,
   onUpdateSuccess,
   onDestroySuccess,
-  onError
+  error
 }

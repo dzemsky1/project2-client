@@ -1,8 +1,45 @@
 @import '~bootstrap/scss/bootstrap';
+$clear: rgba(255,255,255,0.3);
+$text: rgba(255,255,255,0.8);
 
 
 body{
   padding: 60px;
+  background-image: linear-gradient(45deg, #25aae1, #4481eb, #04befe, #3f86ed);
+  height: 100vh;
+  width: 100vw;
+  color: $text;
+}
+
+h1{
+  font-size: 32px;
+  font-weight: 600px;
+}
+
+::placeholder {
+            color: $text;
+}
+
+.form-control{
+  background-color: $clear;
+  background: transparent;
+   padding: 1em;
+   margin-bottom: 2em;
+   border: none;
+   border-left: 1px solid $clear;
+   border-top: 1px solid $clear;
+   border-radius: 5000px;
+   backdrop-filter: blur(5px);
+   box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+   color: #ffffff;
+   font-family: Montserrat, sans-serif;
+   font-weight: 500;
+   transition: all 0.2s ease-in-out;
+   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+   &::placeholder {
+               color: $text;
+               font-weight: 400px;
+   }
 }
 
 h1{
@@ -10,14 +47,36 @@ h1{
   margin-bottom: 48px;
 }
 
+p {
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
 form{
   margin:auto;
   max-width: 20vw;
   min-width: 400px;
+  padding: 3em;
+  border-left: 1px solid $clear;
+  border-top: 1px solid $clear;
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  background-color: $clear;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
 }
 
 #sign-up, #sign-in{
-  max-width: 20vw;
-  min-width: 400px;
+  max-width: 10vw;
+  min-width: 300px;
   margin-top: 2rem;
+  background-image: linear-gradient(45deg, #fc6076, #ff9a44, #ef9d43, #e75516);
+  background-size: 200% 100%;
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  border: none;
+  border-radius: 32px;
 }

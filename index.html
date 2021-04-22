@@ -12,7 +12,6 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Welcome to the Farm</h1>
 
       <div id='signed-in-options'>
         <button id="sign-out-button" type="button" class="btn btn-primary">Sign Out</button>
@@ -33,29 +32,24 @@
 
       <form id="sign-up-form">
         <div class="form-group">
-          <label for="exampleInputEmail1"> Email address</label>
-          <input type="email" name="credentials[email]"  class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-          <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <h1>Welcome to the Farm</h1>
+          <input type="email" name="credentials[email]" id="test" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
           <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Confirm Password</label>
-          <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password">
         </div>
         <button id="sign-up" type="submit" class="btn btn-secondary">Sign Up</button>
       </form>
       <hr class="dashed">
       <form id="sign-in-form">
+        <h1>Come on in</h1>
         <div class="form-group">
-          <label for="exampleInputEmail1"> Email address</label>
           <input type="email" name="credentials[email]"  class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-          <small class="form-text text-muted">Do it</small>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
           <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
         </div>
         <button id="sign-in" type="submit" class="btn btn-primary">Sign In</button>
