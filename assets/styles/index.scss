@@ -20,6 +20,11 @@ h1{
             color: $text;
 }
 
+
+.modal-dialog{
+  background-color: black;
+}
+
 .form-control{
   background-color: $clear;
   background: transparent;
@@ -57,7 +62,7 @@ p {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 
-form{
+#sign-up-form, #sign-in-form, #create-form, #update-form, #destroy-form{
   margin:auto;
   max-width: 20vw;
   min-width: 400px;
