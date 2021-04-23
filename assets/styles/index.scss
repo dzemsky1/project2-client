@@ -7,14 +7,43 @@ $primary: linear-gradient(45deg, #fc6076, #ff9a44, #ef9d43, #e75516);
 body{
   padding: 60px;
   background-image: linear-gradient(45deg, #25aae1, #4481eb, #04befe, #3f86ed);
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   color: $text;
+  background-repeat: no-repeat;
+
+
 }
 
 h1{
   font-size: 32px;
   font-weight: 600px;
+}
+
+.toast-header{
+  background-color: $clear;
+}
+
+.toast-body{
+  color: black;
+  background-color: $clear;
+}
+
+#sign-up-div, #sign-in-div, #create-div, #update-div, #destroy-div{
+  position: absolute;
+  z-index: 9;
+}
+
+
+
+#sign-in-divheader, #sign-up-divheader, #create-divheader, #destroy-divheader, #update-divheader {
+  cursor: move;
+  z-index: 9;
+  padding-top: 20px;
+  margin-top: -30px;
+  margin-bottom: 12px;
+  background-color: $clear;
+  border-radius: 20px;
 }
 
 
@@ -75,13 +104,48 @@ p {
   background-color: $clear;
   border-radius: 30px;
   margin-bottom: 24px;
+  margin-top: 60px;
 }
 
-#sign-up, #sign-in{
+#sign-up-form, #create-form{
+  margin-left: 160px;
+}
+//
+// .btn-hover {
+//     width: 200px;
+//     font-size: 16px;
+//     font-weight: 600;
+//     color: #fff;
+//     cursor: pointer;
+//     margin: 20px;
+//     height: 55px;
+//     text-align:center;
+//     border: none;
+//     background-size: 300% 100%;
+//
+//     border-radius: 50px;
+//     moz-transition: all .4s ease-in-out;
+//     -o-transition: all .4s ease-in-out;
+//     -webkit-transition: all .4s ease-in-out;
+//     transition: all .4s ease-in-out;
+// }
+//
+// .btn-hover:hover {
+//     background-position: 100% 0;
+//     moz-transition: all .4s ease-in-out;
+//     -o-transition: all .4s ease-in-out;
+//     -webkit-transition: all .4s ease-in-out;
+//     transition: all .4s ease-in-out;
+// }
+//
+// .btn-hover:focus {
+//     outline: none;
+// }
+
+#sign-up, #sign-in, #create-button, #update-button, #destroy-button{
   max-width: 10vw;
   min-width: 300px;
   margin-top: 2rem;
-  background-image: linear-gradient(45deg, #fc6076, #ff9a44, #ef9d43, #e75516);
   background-size: 200% 100%;
   box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
   border: none;
@@ -90,6 +154,7 @@ p {
 
 #animal-list{
   color: black;
+  font-size: 16px;
 }
 
 .btn-primary{
@@ -98,6 +163,13 @@ p {
   box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
   border: none;
   border-radius: 32px;
+  &:hover {
+      background-position: 100% 0;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+  }
 }
 
 .btn-secondary{
@@ -108,4 +180,31 @@ p {
   border-radius: 32px;
   border-left: 1px solid $clear;
   border-top: 1px solid $clear;
+}
+
+#live-toast{
+  background-color: $clear;
+  color: black;
+}
+
+#destroy-button{
+  margin-top: 172px;
+}
+
+#create-button{
+  margin-top: 100px;
+}
+
+#sign-in{
+  margin-top: 96px;
+}
+
+#sign-out{
+  margin-right: 24px;
+}
+
+#change-password-button{
+  margin-left: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
 }

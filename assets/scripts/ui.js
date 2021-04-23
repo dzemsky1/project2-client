@@ -5,6 +5,8 @@ const onSignUpSuccess = function () {
   $('#sign-up-form').trigger('reset')
   $('.toast').toast('show')
   $('.toast-body').text('Youre all signed up!')
+  // $('#sign-in-form').css('opacity', '1')
+  // $('#sign-up-form').css('opacity', '.3')
 }
 
 const onSignInSuccess = function (response) {
@@ -46,12 +48,12 @@ const onCreateSuccess = function () {
 const onViewSuccess = function (response) {
   // console.log(response)
   $('#create-form').trigger('reset')
-  $('#animal-list').html('Animals')
+  $('#animal-list').html('')
   for (let i = 0; i < response.animals.length; i++) {
     const name = response.animals[i].name
     const skill = response.animals[i].skill
     const id = response.animals[i]._id
-    $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id)
+    $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/>')
   }
   $('.toast').toast('show')
   $('.toast-body').text('Here they are!')
