@@ -35,7 +35,6 @@ h1{
 }
 
 
-
 #sign-in-divheader, #sign-up-divheader, #create-divheader, #destroy-divheader, #update-divheader {
   cursor: move;
   z-index: 9;
@@ -109,9 +108,20 @@ p {
   margin-top: 60px;
 }
 
-#sign-up-form, #create-form{
-  margin-left: 160px;
+#sign-up-form{
+  margin-left: 560px;
 }
+
+#create-form{
+  margin-left: 900px;
+}
+
+#update-form{
+  margin-left: 400px;
+}
+
+
+
 //
 // .btn-hover {
 //     width: 200px;
