@@ -47,11 +47,6 @@ h1{
 }
 
 
-#old-password-group, #new-password-group{
-  &::placeholder{
-    color: black;
-  }
-}
 
 .form-control{
   background-color: $clear;
@@ -62,7 +57,6 @@ h1{
    border-left: 1px solid $clear;
    border-top: 1px solid $clear;
    border-radius: 5000px;
-   backdrop-filter: blur(5px);
    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
    color: #ffffff;
    font-family: Montserrat, sans-serif;
@@ -92,6 +86,14 @@ p {
 .modal-title{
   color: black;
 }
+
+.modal-content{
+  border-radius: 30px;
+  background-color: rgba(255,255,255,0.9);
+  padding-left: 16px;
+}
+
+
 
 #sign-up-form, #sign-in-form, #create-form, #update-form, #destroy-form{
   margin:auto;
@@ -142,8 +144,8 @@ p {
 //     outline: none;
 // }
 
-#sign-up, #sign-in, #create-button, #update-button, #destroy-button{
-  max-width: 10vw;
+#sign-up, #sign-in, #create-button, #update-button, #destroy-button, #change-password-confirm{
+  // max-width: 10vw;
   min-width: 300px;
   margin-top: 2rem;
   background-size: 200% 100%;
@@ -152,10 +154,16 @@ p {
   border-radius: 32px;
 }
 
+#change-password-confirm{
+  margin-bottom: 24px;
+  width: 450px;
+}
+
 #animal-list{
   color: black;
   font-size: 16px;
 }
+
 
 .btn-primary{
   background-image: $primary;
@@ -165,7 +173,6 @@ p {
   border-radius: 32px;
   &:hover {
       background-position: 100% 0;
-      moz-transition: all .4s ease-in-out;
       -o-transition: all .4s ease-in-out;
       -webkit-transition: all .4s ease-in-out;
       transition: all .4s ease-in-out;
@@ -203,8 +210,16 @@ p {
   margin-right: 24px;
 }
 
-#change-password-button{
-  margin-left: 24px;
+#oldpassword, #newpassword{
+  &::placeholder{
+    color: rgba(0,0,0,0.7);
+    text-shadow: none;
+  }
+  margin-top: 24px;
+}
+
+#change-password-button, #view-button, #sign-out-button{
+  margin-left: 20px;
   padding-left: 20px;
   padding-right: 20px;
 }
