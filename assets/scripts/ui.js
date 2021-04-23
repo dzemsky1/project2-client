@@ -32,8 +32,7 @@ const onSignOutSuccess = function () {
 }
 
 const onChangePasswordSuccess = function () {
-  $('#sign-in-form').trigger('reset')
-  console.log('pw should change')
+  $('#change-password-form').trigger('reset')
   $('.toast').toast('show')
   $('.toast-body').text('Good Choice!')
 }
