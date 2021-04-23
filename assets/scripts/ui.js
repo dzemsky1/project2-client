@@ -46,13 +46,24 @@ const onCreateSuccess = function () {
 
 const onViewSuccess = function (response) {
   // console.log(response)
-  $('#create-form').trigger('reset')
   $('#animal-list').html('')
   for (let i = 0; i < response.animals.length; i++) {
     const name = response.animals[i].name
     const skill = response.animals[i].skill
     const id = response.animals[i]._id
     $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/>')
+  }
+  $('.toast').toast('show')
+  $('.toast-body').text('Here they are!')
+}
+
+const onAllViewSuccess = function (response) {
+  $('#all-animal-list').html('')
+  for (let i = 0; i < response.animals.length; i++) {
+    const name = response.animals[i].name
+    const skill = response.animals[i].skill
+    const id = response.animals[i]._id
+    $('#all-animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/>')
   }
   $('.toast').toast('show')
   $('.toast-body').text('Here they are!')
@@ -90,5 +101,6 @@ module.exports = {
   onViewSuccess,
   onUpdateSuccess,
   onDestroySuccess,
+  onAllViewSuccess,
   error
 }

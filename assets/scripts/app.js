@@ -16,6 +16,7 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#create-form').on('submit', authEvents.onCreate)
   $('#view-button').on('click', authEvents.onView)
+  $('#all-farms-button').on('click', authEvents.onAllView)
   $('#update-form').on('submit', authEvents.onUpdate)
   $('#destroy-form').on('submit', authEvents.onDestroy)
   // your JS code goes here
@@ -34,10 +35,10 @@ function dragElement (elmnt) {
   let pos4 = 0
   if (document.getElementById(elmnt.id + 'header')) {
     /* if present, the header is where you move the DIV from: */
-    document.getElementById(elmnt.id + 'header').onmousedown = dragMouseDown;
+    document.getElementById(elmnt.id + 'header').onmousedown = dragMouseDown
   } else {
     /* otherwise, move the DIV from anywhere inside the DIV: */
-    elmnt.onmousedown = dragMouseDown;
+    elmnt.onmousedown = dragMouseDown
   }
 
   function dragMouseDown (e) {

@@ -61,6 +61,16 @@ const viewAnimals = function () {
   })
 }
 
+const allViewAnimals = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/allanimals',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 const updateAnimal = function (data) {
   return $.ajax({
     method: 'PATCH',
@@ -90,5 +100,6 @@ module.exports = {
   createAnimal,
   updateAnimal,
   viewAnimals,
-  destroyAnimal
+  destroyAnimal,
+  allViewAnimals
 }

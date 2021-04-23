@@ -44,10 +44,10 @@
             </div>
           </div>
         </div>
-        <button id="view-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#farm-modal">
-        View the Farm
-        </button>
 
+        <button id="view-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#farm-modal">
+        View your Farm
+        </button>
         <div class="modal fade" id="farm-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -63,8 +63,27 @@
             </div>
           </div>
         </div>
+
+        <button id="all-farms-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#all-farm-modal">
+        View All the Farms
+        </button>
+        <div class="modal fade" id="all-farm-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">All the Farm Animals</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="all-animal-list"></p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        </div>
 
 
 
