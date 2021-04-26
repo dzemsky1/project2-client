@@ -85,6 +85,16 @@ const onDestroy = function (event) {
     .catch(ui.error)
 }
 
+const onComment = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  console.log(data['ID'])
+  api.createComment(data)
+    .then(ui.onCommentSuccess)
+    .catch(ui.error)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -94,5 +104,6 @@ module.exports = {
   onCreate,
   onUpdate,
   onDestroy,
-  onAllView
+  onAllView,
+  onComment
 }

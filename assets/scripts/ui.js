@@ -44,27 +44,60 @@ const onCreateSuccess = function () {
   $('.toast-body').text('Roaaaarrrrrrrr!')
 }
 
+
 const onViewSuccess = function (response) {
-  // console.log(response)
+  console.log(response.animals)
   $('#animal-list').html('')
   for (let i = 0; i < response.animals.length; i++) {
-    const name = response.animals[i].name
-    const skill = response.animals[i].skill
-    const id = response.animals[i]._id
-    $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/>')
-  }
+      const name = response.animals[i].name
+      const skill = response.animals[i].skill
+      const id = response.animals[i]._id
+      $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/> Comments: ' + '<br/>')
+      for (let j = 0; j < response.animals[i].comments.length; j++) {
+        const comments = response.animals[i].comments[j]['body']
+        $('#animal-list').append(comments + '<br/>')
+      }
+      // console.log(response.animals[i].comments[j])
+      // $('#animal-list').append(comments)
+    }
+
   $('.toast').toast('show')
   $('.toast-body').text('Here they are!')
 }
 
+// const onViewSuccess = function (response) {
+//   console.log(response.animals)
+//   $('#animal-list').html('')
+//   for (let i = 0; i < response.animals.length; i++) {
+//     for (let j = 0; j < response.animals[i].comments; j++) {
+//       const name = response.animals[i].name
+//       const skill = response.animals[i].skill
+//       const id = response.animals[i]._id
+//       $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/> Comments: ' + '<br/>')
+//       const comments = response.animals[i].comments[j]['body']
+//       console.log(response.animals[i].comments[j])
+//       $('#animal-list').append(comments)
+//     }
+//   }
+//   $('.toast').toast('show')
+//   $('.toast-body').text('Here they are!')
+// }
+
 const onAllViewSuccess = function (response) {
   $('#all-animal-list').html('')
   for (let i = 0; i < response.animals.length; i++) {
-    const name = response.animals[i].name
-    const skill = response.animals[i].skill
-    const id = response.animals[i]._id
-    $('#all-animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/>')
-  }
+      const name = response.animals[i].name
+      const skill = response.animals[i].skill
+      const id = response.animals[i]._id
+      $('#all-animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/> Comments: ' + '<br/>')
+      for (let j = 0; j < response.animals[i].comments.length; j++) {
+        const comments = response.animals[i].comments[j]['body']
+        $('#all-animal-list').append(comments + '<br/>')
+      }
+      // console.log(response.animals[i].comments[j])
+      // $('#animal-list').append(comments)
+    }
+
   $('.toast').toast('show')
   $('.toast-body').text('Here they are!')
 }
@@ -87,6 +120,11 @@ const error = function () {
   $('.toast-body').text('Error!')
 }
 
+const onCommentSuccess = function (response) {
+  $('#comment-form').trigger('reset')
+  $('.toast').toast('show')
+  $('.toast-body').text('Nice Comment')
+}
 
 
 
@@ -102,5 +140,6 @@ module.exports = {
   onUpdateSuccess,
   onDestroySuccess,
   onAllViewSuccess,
+  onCommentSuccess,
   error
 }

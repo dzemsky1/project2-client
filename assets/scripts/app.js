@@ -19,6 +19,7 @@ $(() => {
   $('#all-farms-button').on('click', authEvents.onAllView)
   $('#update-form').on('submit', authEvents.onUpdate)
   $('#destroy-form').on('submit', authEvents.onDestroy)
+  $('#comment-form').on('submit', authEvents.onComment)
   // your JS code goes here
 })
 
@@ -27,6 +28,7 @@ dragElement(document.getElementById('sign-in-div'))
 dragElement(document.getElementById('update-div'))
 dragElement(document.getElementById('destroy-div'))
 dragElement(document.getElementById('create-div'))
+dragElement(document.getElementById('comment-div'))
 
 function dragElement (elmnt) {
   let pos1 = 0

@@ -92,6 +92,17 @@ const destroyAnimal = function (data) {
   })
 }
 
+const createComment = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/comments/' + data['ID'],
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -101,5 +112,6 @@ module.exports = {
   updateAnimal,
   viewAnimals,
   destroyAnimal,
-  allViewAnimals
+  allViewAnimals,
+  createComment
 }
