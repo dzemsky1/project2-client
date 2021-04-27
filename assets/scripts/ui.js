@@ -55,7 +55,8 @@ const onViewSuccess = function (response) {
       $('#animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/> Comments: ' + '<br/>')
       for (let j = 0; j < response.animals[i].comments.length; j++) {
         const comments = response.animals[i].comments[j]['body']
-        $('#animal-list').append(comments + '<br/>')
+        const owner = response.animals[i].comments[j]['owner']
+        $('#animal-list').append(comments + ' - ' + owner + '<br/>')
       }
       // console.log(response.animals[i].comments[j])
       // $('#animal-list').append(comments)
@@ -89,10 +90,12 @@ const onAllViewSuccess = function (response) {
       const name = response.animals[i].name
       const skill = response.animals[i].skill
       const id = response.animals[i]._id
-      $('#all-animal-list').append('<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/> Comments: ' + '<br/>')
+      const owner = response.animals[i].owner['email']
+      $('#all-animal-list').append('<br/> Owner:' + owner + '<br/> Name: ' + name + '<br/> Skill: ' + skill + '<br/> Id: ' + id + '<br/> Comments: ' + '<br/>')
       for (let j = 0; j < response.animals[i].comments.length; j++) {
         const comments = response.animals[i].comments[j]['body']
-        $('#all-animal-list').append(comments + '<br/>')
+        const owner = response.animals[i].comments[j]['owner']
+        $('#all-animal-list').append(comments + ' - ' + owner + '<br/>')
       }
       // console.log(response.animals[i].comments[j])
       // $('#animal-list').append(comments)

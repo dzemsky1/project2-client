@@ -7,7 +7,7 @@ $primary: linear-gradient(45deg, #fc6076, #ff9a44, #ef9d43, #e75516);
 body{
   padding: 60px;
   background-image: linear-gradient(45deg, #25aae1, #4481eb, #04befe, #3f86ed);
-  height: 110vh;
+  height: 200vh;
   width: 100vw;
   color: $text;
   background-repeat: no-repeat;
@@ -16,8 +16,8 @@ body{
 }
 
 h1{
-  font-size: 32px;
-  font-weight: 600px;
+  font-size: 24px;
+  font-weight: 500px;
 }
 
 .toast-header{
@@ -29,13 +29,13 @@ h1{
   background-color: $clear;
 }
 
-#sign-up-div, #sign-in-div, #create-div, #update-div, #destroy-div{
+#sign-up-div, #sign-in-div, #create-div, #update-div, #destroy-div, #comment-div{
   position: absolute;
   z-index: 9;
 }
 
 
-#sign-in-divheader, #sign-up-divheader, #create-divheader, #destroy-divheader, #update-divheader {
+#sign-in-divheader, #sign-up-divheader, #create-divheader, #destroy-divheader, #update-divheader, #comment-divheader {
   cursor: move;
   z-index: 9;
   padding-top: 20px;
@@ -70,7 +70,7 @@ h1{
 
 h1{
   margin: auto;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 p {
@@ -96,9 +96,8 @@ p {
 
 #sign-up-form, #sign-in-form, #create-form, #update-form, #destroy-form, #comment-form{
   margin:auto;
-  max-width: 20vw;
-  min-width: 400px;
-  padding: 3em;
+  width: 320px;
+  padding: 2em;
   border-left: 1px solid $clear;
   border-top: 1px solid $clear;
   box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
@@ -158,9 +157,9 @@ p {
 //     outline: none;
 // }
 
-#sign-up, #sign-in, #create-button, #update-button, #destroy-button, #change-password-confirm{
+#sign-up, #sign-in, #create-button, #update-button, #destroy-button, #change-password-confirm, #comment-button{
   // max-width: 10vw;
-  min-width: 300px;
+  width: 260px;
   margin-top: 2rem;
   background-size: 200% 100%;
   box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
@@ -232,7 +231,7 @@ p {
   margin-top: 24px;
 }
 
-#change-password-button, #view-button, #sign-out-button{
+#change-password-button, #view-button, #sign-out-button, #all-farms-button{
   margin-left: 20px;
   padding-left: 20px;
   padding-right: 20px;
