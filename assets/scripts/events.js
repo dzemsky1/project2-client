@@ -24,7 +24,6 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
-  console.log('test')
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
@@ -46,7 +45,6 @@ const onCreate = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
   api.createAnimal(data)
     .then(ui.onCreateSuccess)
     .catch(ui.error)
@@ -79,7 +77,6 @@ const onDestroy = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
   api.destroyAnimal(data)
     .then(ui.onDestroySuccess)
     .catch(ui.error)
@@ -89,7 +86,6 @@ const onComment = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log(data['ID'])
   api.createComment(data)
     .then(ui.onCommentSuccess)
     .catch(ui.error)

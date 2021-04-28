@@ -27,7 +27,6 @@ const onSignOutSuccess = function () {
   $('#animal-options').hide()
   $('.toast').toast('show')
   $('.toast-body').text('Goodbye!')
-  console.log(store.user)
   // store.user = null
 }
 
@@ -39,14 +38,12 @@ const onChangePasswordSuccess = function () {
 
 const onCreateSuccess = function () {
   $('#create-form').trigger('reset')
-  console.log('animal created?')
   $('.toast').toast('show')
   $('.toast-body').text('Roaaaarrrrrrrr!')
 }
 
 
 const onViewSuccess = function (response) {
-  console.log(response.animals)
   $('#animal-list').html('')
   for (let i = 0; i < response.animals.length; i++) {
       const name = response.animals[i].name
